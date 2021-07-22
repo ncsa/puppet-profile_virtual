@@ -1,1 +1,3 @@
---- {}
+---
+profile_virtual::vmware::files_remove_setuid:
+  "/bin/fusermount": {}
