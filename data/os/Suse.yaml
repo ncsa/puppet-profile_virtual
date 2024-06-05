@@ -1,0 +1,5 @@
+---
+profile_virtual::vmware::packages:
+  - "open-vm-tools"
+profile_virtual::vmware::services:
+  - "vmtoolsd"

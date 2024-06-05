@@ -5,7 +5,5 @@
 # @example
 #   include profile_virtual::physical
 class profile_virtual::physical {
-
   ## CURRENTLY NOTHING IS HAPPENING HERE
-
 }
