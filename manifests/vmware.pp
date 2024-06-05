@@ -15,14 +15,13 @@
 #   include profile_virtual::vmware
 class profile_virtual::vmware (
   Hash               $files_remove_setuid,
-  Array[ String[1] ] $packages,
-  Array[ String[1] ] $services,
+  Array[String[1]] $packages,
+  Array[String[1]] $services,
 ) {
-
   # INSTALL VMWARE $packages
   ensure_packages(
     $packages,
-    { 'notify' => Service[ $services ], }
+    { 'notify' => Service[$services], }
   )
 
   # ENABLE VMWARE $services
@@ -38,5 +37,4 @@ class profile_virtual::vmware (
     mode    => 'ug-s',
   }
   ensure_resources('file', $files_remove_setuid, $file_remove_setuid_defaults )
-
 }

@@ -7,8 +7,8 @@
 ### Classes
 
 * [`profile_virtual`](#profile_virtual): Host customization depending on virtualization hypervisor type
-* [`profile_virtual::physical`](#profile_virtualphysical): Host customization if running on a physical server
-* [`profile_virtual::vmware`](#profile_virtualvmware): Host customization if running on a VMware hypervisor
+* [`profile_virtual::physical`](#profile_virtual--physical): Host customization if running on a physical server
+* [`profile_virtual::vmware`](#profile_virtual--vmware): Host customization if running on a VMware hypervisor
 
 ## Classes
 
@@ -24,7 +24,7 @@ Host customization depending on virtualization hypervisor type
 include profile_virtual
 ```
 
-### <a name="profile_virtualphysical"></a>`profile_virtual::physical`
+### <a name="profile_virtual--physical"></a>`profile_virtual::physical`
 
 Host customization if running on a physical server
 
@@ -36,7 +36,7 @@ Host customization if running on a physical server
 include profile_virtual::physical
 ```
 
-### <a name="profile_virtualvmware"></a>`profile_virtual::vmware`
+### <a name="profile_virtual--vmware"></a>`profile_virtual::vmware`
 
 Host customization if running on a VMware hypervisor
 
@@ -52,25 +52,25 @@ include profile_virtual::vmware
 
 The following parameters are available in the `profile_virtual::vmware` class:
 
-* [`files_remove_setuid`](#files_remove_setuid)
-* [`packages`](#packages)
-* [`services`](#services)
+* [`files_remove_setuid`](#-profile_virtual--vmware--files_remove_setuid)
+* [`packages`](#-profile_virtual--vmware--packages)
+* [`services`](#-profile_virtual--vmware--services)
 
-##### <a name="files_remove_setuid"></a>`files_remove_setuid`
+##### <a name="-profile_virtual--vmware--files_remove_setuid"></a>`files_remove_setuid`
 
 Data type: `Hash`
 
 Hash of file resource paramters that need setuid removed from them
 
-##### <a name="packages"></a>`packages`
+##### <a name="-profile_virtual--vmware--packages"></a>`packages`
 
-Data type: `Array[ String[1] ]`
+Data type: `Array[String[1]]`
 
 Array of packages to ensure installed for vmware
 
-##### <a name="services"></a>`services`
+##### <a name="-profile_virtual--vmware--services"></a>`services`
 
-Data type: `Array[ String[1] ]`
+Data type: `Array[String[1]]`
 
 Array of services to ensure running for vmware
 
