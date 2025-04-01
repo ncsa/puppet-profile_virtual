@@ -6,11 +6,17 @@
 #   include profile_virtual
 class profile_virtual {
   case $facts['virtual'] {
-    'vmware': {
-      include profile_virtual::vmware
+    'kvm': {
+      include profile_virtual::kvm
     }
     'physical': {
       include profile_virtual::physical
+    }
+    'qemu': {
+      include profile_virtual::kvm
+    }
+    'vmware': {
+      include profile_virtual::vmware
     }
     default:  {
       ## DO NOT DO ANYTHING
@@ -18,5 +24,5 @@ class profile_virtual {
   }
 
   # OTHER POSSIBLE virtual FACT VALUES:
-  # 'virtualbox', 'kvm', 'openstack', hyperv, qemu, xen, etc.
+  # 'virtualbox', 'openstack', hyperv, xen, etc.
 }

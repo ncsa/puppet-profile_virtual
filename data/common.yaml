@@ -1,3 +1,9 @@
 ---
+profile_virtual::kvm::files_remove_setuid: {}
+profile_virtual::kvm::qemu_packages:
+  - "qemu-guest-agent"
+profile_virtual::kvm::qemu_services:
+  - "qemu-guest-agent"
+
 profile_virtual::vmware::files_remove_setuid:
   "/bin/fusermount": {}

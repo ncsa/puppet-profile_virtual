@@ -7,6 +7,7 @@
 ### Classes
 
 * [`profile_virtual`](#profile_virtual): Host customization depending on virtualization hypervisor type
+* [`profile_virtual::kvm`](#profile_virtual--kvm): Host customization if running on a KVM hypervisor
 * [`profile_virtual::physical`](#profile_virtual--physical): Host customization if running on a physical server
 * [`profile_virtual::vmware`](#profile_virtual--vmware): Host customization if running on a VMware hypervisor
 
@@ -23,6 +24,48 @@ Host customization depending on virtualization hypervisor type
 ```puppet
 include profile_virtual
 ```
+
+### <a name="profile_virtual--kvm"></a>`profile_virtual::kvm`
+
+Host customization if running on a KVM hypervisor
+Currently this only makes changes for QEMU virtual hosts
+
+NOTE: For QEMU VMs qemu_guest_agent needs to be enabled for the VM in the hypervisor.
+Enabling the qemu_guest_agent option creates a special device that the VM host has access to.
+
+#### Examples
+
+##### 
+
+```puppet
+include profile_virtual::kvm
+```
+
+#### Parameters
+
+The following parameters are available in the `profile_virtual::kvm` class:
+
+* [`files_remove_setuid`](#-profile_virtual--kvm--files_remove_setuid)
+* [`qemu_packages`](#-profile_virtual--kvm--qemu_packages)
+* [`qemu_services`](#-profile_virtual--kvm--qemu_services)
+
+##### <a name="-profile_virtual--kvm--files_remove_setuid"></a>`files_remove_setuid`
+
+Data type: `Hash`
+
+Hash of file resource parameters that need setuid removed from them
+
+##### <a name="-profile_virtual--kvm--qemu_packages"></a>`qemu_packages`
+
+Data type: `Array[String[1]]`
+
+Array of packages to ensure installed for qemu
+
+##### <a name="-profile_virtual--kvm--qemu_services"></a>`qemu_services`
+
+Data type: `Array[String[1]]`
+
+Array of services to ensure running for qemu
 
 ### <a name="profile_virtual--physical"></a>`profile_virtual::physical`
 
@@ -60,7 +103,7 @@ The following parameters are available in the `profile_virtual::vmware` class:
 
 Data type: `Hash`
 
-Hash of file resource paramters that need setuid removed from them
+Hash of file resource parameters that need setuid removed from them
 
 ##### <a name="-profile_virtual--vmware--packages"></a>`packages`
 

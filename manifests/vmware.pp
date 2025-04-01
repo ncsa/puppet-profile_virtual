@@ -3,7 +3,7 @@
 # Host customization if running on a VMware hypervisor
 #
 # @param files_remove_setuid
-#   Hash of file resource paramters that need setuid removed from them
+#   Hash of file resource parameters that need setuid removed from them
 #
 # @param packages
 #   Array of packages to ensure installed for vmware
